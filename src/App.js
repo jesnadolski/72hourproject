@@ -7,46 +7,30 @@ import Zomato from "./components/Zomato/Zomato";
 
 function App() {
 
-// const [location, setLocation] = useState(undefined);
-const [coordinates, setCoordinates] = useState(undefined);
-const [latitude, setLatitude] = useState(undefined);
-const [longitude, setLongitude] = useState(undefined);
-const [loading, setLoading] = useState(true);
 
-// const getLocation = () => {
-  // navigator.geolocation.getCurrentPosition(function(position) {
-  //   console.log("Latitude is:", position.coords.latitude);
-  //   console.log("Longitude is:", position.coords.longitude);
-  //   console.log(position);
-  //   setLatitude(position.coords.latitude);
-  //   setLongitude(position.coords.longitude);
-//   });
-// }
+const [coordinates, setCoordinates] = useState(undefined);
+const [loading, setLoading] = useState(true);
 
 useEffect(() => {
   navigator.geolocation.getCurrentPosition(function(position) {
     console.log("Latitude is:", position.coords.latitude);
     console.log("Longitude is:", position.coords.longitude);
     console.log(position);
-    setLatitude(position.coords.latitude);
-    setLongitude(position.coords.longitude);
     setCoordinates(position.coords);
     setLoading(false);
-});
+  });
 }, []);
-
 if(loading && !coordinates) {
-  return (
-  <div>loading data...</div>
-  )
+  return <div>loading</div>
 }
+
 
   return (
           <div>
-            <Nasa />
-            <Weather />
+            <Nasa latitude={coordinates.latitude} longitude={coordinates.longitude}/>
+            <Weather latitude={coordinates.latitude} longitude={coordinates.longitude} />
             <Zomato latlatitude={coordinates.latitude} longitude={coordinates.longitude}/>
-            <Jobs />
+            <Jobs latitude={coordinates.latitude} longitude={coordinates.longitude}/>
     </div>
   );
 }
