@@ -7,10 +7,9 @@ import Zomato from "./components/Zomato/Zomato";
 
 function App() {
 
-// const [location, setLocation] = useState(undefined);
+
 const [coordinates, setCoordinates] = useState(undefined);
 const [loading, setLoading] = useState(true);
-
 
 useEffect(() => {
   navigator.geolocation.getCurrentPosition(function(position) {
@@ -25,12 +24,13 @@ if(loading && !coordinates) {
   return <div>loading</div>
 }
 
+
   return (
           <div>
-            <Nasa />
+            <Nasa latitude={coordinates.latitude} longitude={coordinates.longitude}/>
             <Weather latitude={coordinates.latitude} longitude={coordinates.longitude} />
-            <Zomato />
-            <Jobs />
+            <Zomato latlatitude={coordinates.latitude} longitude={coordinates.longitude}/>
+            <Jobs latitude={coordinates.latitude} longitude={coordinates.longitude}/>
     </div>
   );
 }
