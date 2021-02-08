@@ -1,30 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
     Card, Button, CardImg, CardTitle, CardText, CardColumns,
     CardSubtitle, CardBody
   } from 'reactstrap';
 
 const ResResults = (props) => {
-
-
     return ( 
 
-     <div>
-{/* <select OnChange = {props.restaurantData}>
-  {Object.keys(props.restaurantData).map((value,key) => {
-    return <option key = {key}>{value}</option>
-  })}
-</select>
-{props.restaurantData.nearby_restaurants[0].restaurant.name} */}
-</div>
-
+        <div>
+            {props.zomato}
+        </div>
         // <Card>
-        //     <CardImg top width="100%" src=""></CardImg>
+        //     <CardImg top width="100%" src={props.zomatorestaurant.restaurant.location.nearby_restaurants.featured_image}></CardImg>
         //     <CardBody>
-        //     <CardTitle tag="h4">{props.restaurants}</CardTitle>
-        //     <CardSubtitle tag="h5">test</CardSubtitle>
-        //     <CardText>test</CardText>
-        //     <Button>test</Button>
+        //     <CardTitle tag="h4">{props.zomatorestaurant.location.name}</CardTitle>
+        //     <CardSubtitle tag="h5">{props.zomatorestaurant.restaurant.cuisines}</CardSubtitle>
+        //     <CardText>{props.zomatorestaurant.location.address}</CardText>
+        //     <Button>{props.zomatorestaurant.location.name}</Button>
         //     </CardBody>
         // </Card>
      );
