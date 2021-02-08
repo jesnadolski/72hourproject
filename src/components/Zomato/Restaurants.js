@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     Card, Button, CardImg, CardTitle, CardText, CardColumns,
     CardSubtitle, CardBody
   } from 'reactstrap';
 
 const ResResults = (props) => {
-    return ( 
-<div>
 
+
+    return ( 
+
+     <div>
+{/* <select OnChange = {props.restaurantData}>
+  {Object.keys(props.restaurantData).map((value,key) => {
+    return <option key = {key}>{value}</option>
+  })}
+</select>
+{props.restaurantData.nearby_restaurants[0].restaurant.name} */}
 </div>
 
         // <Card>
