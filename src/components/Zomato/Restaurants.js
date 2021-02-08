@@ -6,17 +6,17 @@ import {
 
 const ResResults = (props) => {
     return ( 
+<div>
 
-        <div>
-            {props.zomato}
-        </div>
+</div>
+
         // <Card>
-        //     <CardImg top width="100%" src={props.zomatorestaurant.restaurant.location.nearby_restaurants.featured_image}></CardImg>
+        //     <CardImg top width="100%" src=""></CardImg>
         //     <CardBody>
-        //     <CardTitle tag="h4">{props.zomatorestaurant.location.name}</CardTitle>
-        //     <CardSubtitle tag="h5">{props.zomatorestaurant.restaurant.cuisines}</CardSubtitle>
-        //     <CardText>{props.zomatorestaurant.location.address}</CardText>
-        //     <Button>{props.zomatorestaurant.location.name}</Button>
+        //     <CardTitle tag="h4">{props.restaurants}</CardTitle>
+        //     <CardSubtitle tag="h5">test</CardSubtitle>
+        //     <CardText>test</CardText>
+        //     <Button>test</Button>
         //     </CardBody>
         // </Card>
      );
