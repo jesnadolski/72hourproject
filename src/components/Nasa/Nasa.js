@@ -25,8 +25,6 @@ const Nasa = props => {
     nasaFetch()
   }, [props])
 
-  // let styles = {borderStyle:borderStyle, width:width}
-
   return (
     <Container>
       <Row>
