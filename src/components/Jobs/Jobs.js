@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
+
 const Jobs = props => {
   const [results, setResults] = useState([])
 
@@ -41,4 +42,4 @@ const Jobs = props => {
   )
 }
 
-export default Jobs
+export default Jobs;
