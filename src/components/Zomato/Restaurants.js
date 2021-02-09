@@ -4,11 +4,17 @@ import {
     CardSubtitle, CardBody
   } from 'reactstrap';
 
-const ResResults = (props) => {
+const ResResults = (props) => {;
+    // console.log(props.nearby)
     return ( 
 
         <div>
-            {props.zomato}
+            TESTING
+            {props.nearby.map((place) => {
+             return (
+             <h1>{place.restaurant.name}</h1>
+             )
+            })}
         </div>
         // <Card>
         //     <CardImg top width="100%" src={props.zomatorestaurant.restaurant.location.nearby_restaurants.featured_image}></CardImg>
