@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import {
-  CardColumns} from 'reactstrap';
+  ListGroup} from 'reactstrap';
 import ResResults from "./Restaurants";
 
 const Zomato = (props) => {
 
-  const [restaurants, setRestaurants] = useState();
-  
+  // const [restaurants, setRestaurants] = useState();
+  const [nearby, setNearby] = useState([]);
+
+
+  console.log(nearby);
   function fetchZomato(){
+   
     const key = "b3f53774cbedf32841880ac2c7fd6a6f";
     const baseurl = "https://developers.zomato.com/api/v2.1/geocode?"
-    const url=`${baseurl}'lat='${props.latitude}'&lon='${props.longitude}`;
+    let url=`${baseurl}'lat='${props.latitude}'&lon='${props.longitude}`;
     console.log(url);
       fetch('https://developers.zomato.com/api/v2.1/geocode?lat=39.96712960000001&lon=-86.10447359999999', {
       method: 'GET',
@@ -21,23 +25,23 @@ const Zomato = (props) => {
     })
     .then(response => response.json())
     .then((data) => {
-      setRestaurants(data);
-      console.log(data);
+      // setRestaurants(data);      
+      setNearby(data.nearby_restaurants);
+      // console.log(nearby);
     })
   }
 
   useEffect(() => {
     fetchZomato()
-  }, []);
+  }, [props.latitude, props.longitude]);
 
 
-// function displayRestaurants(){
-//   return restaurants.location.length >0 ? restaurants.map((restaurant) => <ResResults zomatorestaurant={restaurant} />) : null;
-// }
 
     return (
       <div>
-   {restaurants.location.title}
+      
+    <ResResults nearby={nearby}/>
+   
       </div>
       );
 }
