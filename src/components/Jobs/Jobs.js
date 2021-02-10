@@ -38,7 +38,9 @@ const Jobs = (props) => {
             <p>{job.location}</p>
             <p>{[job.title]}</p>
             <p>
-              <a href={job.url}>Click to see full job description.</a>
+              <a href={job.url} target='blank'>
+                Click to see full job description.
+              </a>
             </p>
 
           </div>
