@@ -46,8 +46,3 @@ const Zomato = (props) => {
 
  
 export default Zomato;
-<<<<<<< HEAD
-=======
-
-
->>>>>>> b56b8448a0a32719f51c1edbeb478963aaacba9b
