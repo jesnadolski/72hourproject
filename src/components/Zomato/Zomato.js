@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  CardColumns} from 'reactstrap';
+  ListGroup} from 'reactstrap';
 import ResResults from "./Restaurants";
 
 const Zomato = (props) => {
@@ -15,7 +15,7 @@ const Zomato = (props) => {
     const key = "b3f53774cbedf32841880ac2c7fd6a6f";
     const baseurl = "https://developers.zomato.com/api/v2.1/geocode?"
     let url=`${baseurl}'lat='${props.latitude}'&lon='${props.longitude}`;
-    // console.log(url);
+    console.log(url);
       fetch('https://developers.zomato.com/api/v2.1/geocode?lat=39.96712960000001&lon=-86.10447359999999', {
       method: 'GET',
       headers: {
@@ -36,13 +36,12 @@ const Zomato = (props) => {
   }, [props.latitude, props.longitude]);
 
 
-  
-
 
     return (
       <div>
-     <ResResults nearby={nearby}/>
-     {/* {nearby && <ResResults nearby={nearby}/>} */}
+      
+    <ResResults nearby={nearby}/>
+   
       </div>
       );
 }
