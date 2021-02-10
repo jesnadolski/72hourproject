@@ -25,15 +25,22 @@ function App() {
 
 
   return (
-
-
-    <div>
-      <Nasa latitude={coordinates.latitude} longitude={coordinates.longitude}/>
-      <Weather latitude={coordinates.latitude} longitude={coordinates.longitude} />
-      <Zomato latitude={coordinates.latitude} longitude={coordinates.longitude}/>
-      <Jobs latitude={coordinates.latitude} longitude={coordinates.longitude}/>
-
-
+    <div className='parent'>
+      <h1>Welcome to long={coordinates.longitude}, lat={coordinates.latitude}</h1>
+      <div className="child">
+        <Nasa latitude={coordinates.latitude} longitude={coordinates.longitude}/>
+      </div>
+        <div className="child">
+          <Weather latitude={coordinates.latitude} longitude={coordinates.longitude} />
+        </div>
+        <div className="child">
+          <h1>Restaurants Nearby</h1>
+            <Zomato latitude={coordinates.latitude} longitude={coordinates.longitude}/>
+        </div>
+        <div className="child">
+          <h1>Get a job!</h1>
+          <Jobs latitude={coordinates.latitude} longitude={coordinates.longitude}/>
+        </div>
     </div>
   )
 }
