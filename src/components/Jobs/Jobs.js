@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
+
 const Jobs = (props) => {
   const [results, setResults] = useState([]);
 
   const corsURL = 'https://efa-cors-anywhere.herokuapp.com/';
   const baseURL = 'https://jobs.github.com/positions';
+
 
   useEffect(() => {
     const url = `${baseURL}?lat=${props.latitude}&long=${props.longitude}`;
@@ -40,6 +42,7 @@ const Jobs = (props) => {
                 Click to see full job description.
               </a>
             </p>
+
           </div>
         );
       })}
@@ -47,4 +50,4 @@ const Jobs = (props) => {
   );
 };
 
-export default Jobs;
+export default Jobs
