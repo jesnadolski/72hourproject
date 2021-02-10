@@ -3,6 +3,7 @@ import {
   ListGroup} from 'reactstrap';
 import ResResults from "./Restaurants";
 
+const Zomato = (props) => {
   const [nearby, setNearby] = useState([]);
 
 
