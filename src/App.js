@@ -11,6 +11,7 @@ function App() {
 const [coordinates, setCoordinates] = useState(undefined);
 const [loading, setLoading] = useState(true);
 
+
 useEffect(() => {
   navigator.geolocation.getCurrentPosition(function(position) {
     console.log("Latitude is:", position.coords.latitude);
@@ -27,10 +28,10 @@ if(loading && !coordinates) {
 
   return (
           <div>
-            <Nasa latitude={coordinates.latitude} longitude={coordinates.longitude}/>
+            {/* <Nasa latitude={coordinates.latitude} longitude={coordinates.longitude}/> */}
             <Weather latitude={coordinates.latitude} longitude={coordinates.longitude} />
-            <Zomato latlatitude={coordinates.latitude} longitude={coordinates.longitude}/>
-            <Jobs latitude={coordinates.latitude} longitude={coordinates.longitude}/>
+            {/* <Zomato latlatitude={coordinates.latitude} longitude={coordinates.longitude}/>
+            <Jobs latitude={coordinates.latitude} longitude={coordinates.longitude}/> */}
     </div>
   );
 }
