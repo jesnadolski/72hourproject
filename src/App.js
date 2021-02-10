@@ -4,6 +4,7 @@ import Jobs from './components/Jobs/Jobs'
 import Nasa from './components/Nasa/Nasa'
 import Weather from './components/Weather/Weather'
 import Zomato from './components/Zomato/Zomato'
+import { Container, Row, Col, Jumbotron } from 'reactstrap'
 
 function App() {
   const [coordinates, setCoordinates] = useState(undefined)
@@ -23,17 +24,17 @@ function App() {
   }
 
   return (
-    <div>
+    <div className='main'>
       <Nasa latitude={coordinates.latitude} longitude={coordinates.longitude} />
       {/* <Weather
-        latitude={coordinates.latitude}
-        longitude={coordinates.longitude}
-      /> */}
+          latitude={coordinates.latitude}
+          longitude={coordinates.longitude}
+        /> */}
       {/* <Zomato
-        latitude={coordinates.latitude}
-        longitude={coordinates.longitude}
-      /> */}
-      <Jobs latitude={coordinates.latitude} longitude={coordinates.longitude} />
+          latitude={coordinates.latitude}
+          longitude={coordinates.longitude}
+        /> */}
+      {/* <Jobs latitude={coordinates.latitude} longitude={coordinates.longitude} /> */}
     </div>
   )
 }

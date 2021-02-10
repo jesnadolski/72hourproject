@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 
-
 const Jobs = props => {
   const [results, setResults] = useState([])
 
@@ -34,7 +33,7 @@ const Jobs = props => {
         return (
           <div key={index}>
             <h3>{job.company}</h3>
-            <p>{[job.location]}</p>
+            <p>{job.location}</p>
           </div>
         )
       })}
@@ -42,4 +41,4 @@ const Jobs = props => {
   )
 }
 
-export default Jobs;
+export default Jobs

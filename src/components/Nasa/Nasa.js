@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'reactstrap'
 
 const Nasa = props => {
   const [data, setData] = useState()
-  const [width, setWidth] = useState('1440px')
+  const [width, setWidth] = useState('768px')
   let styles = {
     width: width
   }
