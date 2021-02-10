@@ -23,7 +23,9 @@ function App() {
     return <div>loading</div>
   }
 
+
   return (
+
 
     <div>
       <Nasa latitude={coordinates.latitude} longitude={coordinates.longitude}/>
@@ -31,8 +33,9 @@ function App() {
       <Zomato latitude={coordinates.latitude} longitude={coordinates.longitude}/>
       <Jobs latitude={coordinates.latitude} longitude={coordinates.longitude}/>
 
+
     </div>
   )
 }
 
-export default App
+export default App;
