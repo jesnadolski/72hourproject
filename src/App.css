@@ -37,8 +37,6 @@ Button {
   width: 100px
 }
 
-
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -48,10 +46,20 @@ Button {
   }
 }
 
-.main {
+.parent {
   margin: 10px;
-}
-.mainDiv {
+  padding: 10px;
+  background-color:lightblue;
+  background-repeat: no-repeat;
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
+.child {
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border: solid 1px black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+
