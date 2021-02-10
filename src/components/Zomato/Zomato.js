@@ -41,7 +41,8 @@ import ResResults from "./Restaurants";
    
       </div>
       );
-}
+    }
+
  
 export default Zomato;
 
