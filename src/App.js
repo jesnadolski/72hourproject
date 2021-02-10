@@ -24,17 +24,13 @@ function App() {
   }
 
   return (
-    <div className='main'>
-      <Nasa latitude={coordinates.latitude} longitude={coordinates.longitude} />
-      {/* <Weather
-          latitude={coordinates.latitude}
-          longitude={coordinates.longitude}
-        /> */}
-      {/* <Zomato
-          latitude={coordinates.latitude}
-          longitude={coordinates.longitude}
-        /> */}
-      {/* <Jobs latitude={coordinates.latitude} longitude={coordinates.longitude} /> */}
+
+    <div>
+      <Nasa latitude={coordinates.latitude} longitude={coordinates.longitude}/>
+      <Weather latitude={coordinates.latitude} longitude={coordinates.longitude} />
+      <Zomato latitude={coordinates.latitude} longitude={coordinates.longitude}/>
+      <Jobs latitude={coordinates.latitude} longitude={coordinates.longitude}/>
+
     </div>
   )
 }

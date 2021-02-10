@@ -1,25 +1,47 @@
-// import React, { useState } from 'react';
-// import {
-//     Card, Button, CardImg, CardTitle, CardText, CardColumns,
-//     CardSubtitle, CardBody
-//   } from 'reactstrap';
+import React, { useState } from 'react';
+import {
+    ListGroup, ListGroupItem, ListGroupItemText, ListGroupItemHeading, Button
+  } from 'reactstrap';
 
-// const ResResults = (props) => {
-//     return (
+const ResResults = (props) => {
+    console.log(props.nearby)
 
-//         <div>
-//             {props.zomato}
-//         </div>
-//         // <Card>
-//         //     <CardImg top width="100%" src={props.zomatorestaurant.restaurant.location.nearby_restaurants.featured_image}></CardImg>
-//         //     <CardBody>
-//         //     <CardTitle tag="h4">{props.zomatorestaurant.location.name}</CardTitle>
-//         //     <CardSubtitle tag="h5">{props.zomatorestaurant.restaurant.cuisines}</CardSubtitle>
-//         //     <CardText>{props.zomatorestaurant.location.address}</CardText>
-//         //     <Button>{props.zomatorestaurant.location.name}</Button>
-//         //     </CardBody>
-//         // </Card>
-//      );
-// }
 
-// export default ResResults;
+    return ( 
+
+        <div>
+          
+             {props.nearby.map((place) => {
+             return (
+                
+<div>
+ <ul>
+<li key={place.restaurant.name.toString()}>
+    {place.restaurant.name}
+  </li>
+  <li key={place.restaurant.cuisines.toString()}>
+    {place.restaurant.cuisines}
+  </li>
+  <li key={place.restaurant.location.address.toString()}>
+    {place.restaurant.location.address}
+  </li>
+  <li key={place.restaurant.user_rating.rating_text.toString()}>
+    {place.restaurant.user_rating.rating_text}
+  </li>
+  
+</ul>
+</div>
+
+
+  
+
+             )
+            })}
+</div>
+    
+     );
+}
+ 
+export default ResResults;
+
+
