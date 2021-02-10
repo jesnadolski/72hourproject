@@ -4,8 +4,6 @@ import {
 import ResResults from "./Restaurants";
 
 const Zomato = (props) => {
-
-  // const [restaurants, setRestaurants] = useState();
   const [nearby, setNearby] = useState([]);
 
 
@@ -25,9 +23,9 @@ const Zomato = (props) => {
     })
     .then(response => response.json())
     .then((data) => {
-      // setRestaurants(data);      
+         
       setNearby(data.nearby_restaurants);
-      // console.log(nearby);
+
     })
   }
 
@@ -44,6 +42,12 @@ const Zomato = (props) => {
    
       </div>
       );
-}
+    }
+
  
 export default Zomato;
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> b56b8448a0a32719f51c1edbeb478963aaacba9b

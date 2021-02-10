@@ -1,31 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from "react";
+
+let key = "fe544efe7738b3fecc6fdd574e208fe6";
+
+function Weather(props) {
+  const [weather, setWeather] = useState();
+  const [toggle, setToggle] = useState(true);
+
+  function fetchWeather() {
+    fetch(
+      `http://api.openweathermap.org/data/2.5/weather?lat=${props.latitude}&lon=${props.longitude}&appid=${key}`
+    )
+      .then((response) => response.json())
+      .then((data) => setWeather(data.main.temp));
+  }
+  
+  function toggleButton(){
+      if (toggle === true){
+          setToggle(false)
+        } else {
+            setToggle(true)
+        }}
+        
+        
+        useEffect(() => {
+            fetchWeather();
+        }, []);
 
 
-const Weather = (props) => {
-    // const [weather, setWeather] = useState()
-
-    // useEffect(() => {
-    // function weatherFetch(){
-    //     const baseURL="https://api.openweathermap.org/data/2.5/"
-    //     const key = "fe544efe7738b3fecc6fdd574e208fe6"
-    //     const url= `${baseURL}weather?lat=${props.latitude}&lon=${props.longitude}&appid=${key}`
-    //     console.log(url)
-    //     fetch(url).then(res => res.json())
-    //     .then(json => {
-    //         setWeather(json)
-    //         console.log(json)
-            
-    //     })
-    // }
-    //     weatherFetch();
-    // }, [props.latitude, props.longitude])
-
-    return ( 
-        <>
-        <h1>Will will work on this</h1>
-        {/* <div>{weather}</div> */}
-        </>
-     );
-}
- 
-export default Weather;
+      return (
+          <div>
+         <h1>Your Weather</h1>
+         <h1>{props.feels_like}</h1>
+     
+          
+          {toggle === true ? Math.floor(weather * 1.8 - 459.67) +"°F" : Math.floor(weather - 273.12)+"°C" }
+          <br></br>
+          <br />
+          {toggle === true ? <button onClick ={toggleButton}>Change to Centigrade</button>:
+          <button onClick ={toggleButton}>Change to Fahrenheit</button>}
+    
+        </div>
+      );
+};
+    export default Weather;
+    

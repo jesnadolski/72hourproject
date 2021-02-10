@@ -47,3 +47,11 @@ Button {
     transform: rotate(360deg);
   }
 }
+
+.main {
+  margin: 10px;
+}
+.mainDiv {
+  display: flex;
+  align-items: center;
+}
