@@ -3,9 +3,6 @@ import {
   ListGroup} from 'reactstrap';
 import ResResults from "./Restaurants";
 
-const Zomato = (props) => {
-
-  // const [restaurants, setRestaurants] = useState();
   const [nearby, setNearby] = useState([]);
 
 
@@ -25,9 +22,9 @@ const Zomato = (props) => {
     })
     .then(response => response.json())
     .then((data) => {
-      // setRestaurants(data);      
+         
       setNearby(data.nearby_restaurants);
-      // console.log(nearby);
+
     })
   }
 
@@ -47,3 +44,4 @@ const Zomato = (props) => {
 }
  
 export default Zomato;
+
